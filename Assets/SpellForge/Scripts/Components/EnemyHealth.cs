@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -5,8 +6,11 @@ namespace SpellForge.Scripts.Components
 {
     public class EnemyHealth : MonoBehaviour
     {
+        public event Action DiedEvent;
+        
         [SerializeField] private Slider healthSlider;
         [SerializeField] private float maxHealth = 100f;
+        
         private float _currentHealth;
 
         private void Awake()
@@ -27,7 +31,13 @@ namespace SpellForge.Scripts.Components
             if (_currentHealth <= 0)
             {
                 Destroy(gameObject);
+                OnDiedEvent();
             }
+        }
+        
+        protected virtual void OnDiedEvent()
+        {
+            DiedEvent?.Invoke();
         }
     }
 }
