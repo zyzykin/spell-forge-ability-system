@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace SpellForge.Scripts.Presentation
 {
-    public class SpellContainer : MonoBehaviour
+    public class AbilityContainer : MonoBehaviour
     {
         [SerializeField] private Image filledImage;
 

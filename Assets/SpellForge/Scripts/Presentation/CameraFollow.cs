@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace SpellForge.Scripts.Scene
+namespace SpellForge.Scripts.Presentation
 {
     public class CameraFollow : MonoBehaviour
     {

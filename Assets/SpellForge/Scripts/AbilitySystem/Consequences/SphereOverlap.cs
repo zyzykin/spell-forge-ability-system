@@ -14,7 +14,7 @@ namespace SpellForge.Scripts.AbilitySystem.Consequences
         {
             var center = context.Center;
 
-            var colliders = Physics.OverlapSphere(center, Radius, LayerMask.GetMask("Enemy"));
+            var colliders = Physics.OverlapSphere(center, Radius, LayerMask.GetMask(EnemyLayer));
             context.Targets = colliders.Select(c => c.gameObject).ToArray();
 
             if (ChainedConsequence != null)

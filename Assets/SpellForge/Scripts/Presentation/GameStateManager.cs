@@ -7,7 +7,7 @@ namespace SpellForge.Scripts.Presentation
     public class GameStateManager : MonoBehaviour
     {
         public static Action GameOverEvent;
-        
+
         private int _alive;
         private EnemyHealth[] _enemies;
 
@@ -19,10 +19,10 @@ namespace SpellForge.Scripts.Presentation
 
         private void OnEnable()
         {
-            foreach(var e in _enemies)
+            foreach (var e in _enemies)
                 e.DiedEvent += OnGameOverEvent;
         }
-        
+
         private void OnDisable()
         {
             foreach (var e in _enemies)
@@ -34,6 +34,5 @@ namespace SpellForge.Scripts.Presentation
             if (--_alive > 0) return;
             GameOverEvent?.Invoke();
         }
-
     }
 }

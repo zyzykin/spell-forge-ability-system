@@ -10,30 +10,32 @@ namespace SpellForge.Scripts.Presentation
         [SerializeField] private Button restartButton;
 
         private void Awake() => HideWinPanel();
-        
+
         private void OnEnable()
         {
             if (restartButton != null)
             {
                 restartButton.onClick.AddListener(OnRestartButtonClicked);
             }
+
             GameStateManager.GameOverEvent += ShowWinPanel;
         }
-        
+
         private void OnDisable()
         {
             if (restartButton != null)
             {
                 restartButton.onClick.RemoveListener(OnRestartButtonClicked);
             }
+
             GameStateManager.GameOverEvent -= ShowWinPanel;
         }
-        
+
         private void OnRestartButtonClicked()
         {
             SceneRestarted();
         }
-        
+
         private void SceneRestarted()
         {
             var index = SceneManager.GetActiveScene().buildIndex;

@@ -9,6 +9,8 @@ namespace SpellForge.Scripts.AbilitySystem.Consequences
     {
         public UnityEvent<GameObject, AbilityContext> OnExecute;
 
+        protected const string EnemyLayer = "Enemy";
+
         public virtual async UniTask Execute(GameObject user, AbilityContext context)
         {
             OnExecute.Invoke(user, context);

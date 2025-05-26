@@ -13,29 +13,32 @@ namespace SpellForge.Scripts.AbilitySystem
         public KeyCode Key;
         public float Cooldown;
         public List<Phase> Phases;
+        
+        private float _lastUsedTime;
+        private bool _isExecuting;
 
         [Serializable]
         public class Phase
         {
             public float Duration = 1f;
-            [Range(0f, 1f)]
-            public float NormalizedTime = 0.5f; // 0 to 1
+            [Range(0f, 1f)] public float NormalizedTime = 0.5f; // 0 to 1
             public List<Consequence> Consequences;
         }
-        
+
         public float CooldownProgress
         {
             get
             {
-                if (CanExecute()) return 1f; // Ability is ready
-                if (_lastUsedTime <= 0f) return 1f; // Ability has never been used
-                float elapsed = Time.time - _lastUsedTime;
+                if (CanExecute()) 
+                    return 1f; // Ability is ready
+                
+                if (_lastUsedTime <= 0f) 
+                    return 1f; // Ability has never been used
+                
+                var elapsed = Time.time - _lastUsedTime;
                 return Mathf.Clamp01(elapsed / Cooldown); // Normalize between 0 and 1
             }
         }
-
-        private float _lastUsedTime;
-        private bool _isExecuting;
 
         private void OnEnable()
         {
@@ -43,11 +46,9 @@ namespace SpellForge.Scripts.AbilitySystem
             _isExecuting = false;
         }
 
-        public bool CanExecute()
+        private bool CanExecute()
         {
-            var canExecute = Time.time >= _lastUsedTime + Cooldown && !_isExecuting;
-            Debug.Log($"Ability {Id}: CanExecute = {canExecute}, Time = {Time.time}, LastUsed = {_lastUsedTime}, Cooldown = {Cooldown}, IsExecuting = {_isExecuting}");
-            return canExecute;
+            return Time.time >= _lastUsedTime + Cooldown && !_isExecuting;
         }
 
         public async UniTask Execute(GameObject user)
@@ -58,7 +59,7 @@ namespace SpellForge.Scripts.AbilitySystem
             }
 
             _isExecuting = true;
-            _lastUsedTime = Time.time; 
+            _lastUsedTime = Time.time;
 
             var context = new AbilityContext(user.transform.position);
 

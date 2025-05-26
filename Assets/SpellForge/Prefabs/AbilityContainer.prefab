@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6386841902636953484}
   - component: {fileID: 2053183610699086187}
   m_Layer: 5
-  m_Name: SpellContainer
+  m_Name: AbilityContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

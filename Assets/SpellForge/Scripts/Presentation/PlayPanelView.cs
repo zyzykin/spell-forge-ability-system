@@ -6,15 +6,15 @@ namespace SpellForge.Scripts.Presentation
 {
     public class PlayPanelView : MonoBehaviour
     {
-        [SerializeField] private List<SpellContainer> spellContainers;
-        
+        [SerializeField] private List<AbilityContainer> abilityContainers;
+
         private void OnEnable()
         {
             Components.AbilitySystem abilitySystem = FindObjectOfType<Components.AbilitySystem>();
             Init(abilitySystem.Abilities);
         }
-        
-        public void Init(List<Ability> abilities)
+
+        private void Init(List<Ability> abilities)
         {
             if (abilities == null)
             {
@@ -22,20 +22,20 @@ namespace SpellForge.Scripts.Presentation
                 return;
             }
 
-            if (spellContainers == null || spellContainers.Count == 0)
+            if (abilityContainers == null || abilityContainers.Count == 0)
             {
                 Debug.LogWarning("SpellContainers list is null or empty in PlayPanelView.Init");
                 return;
             }
 
-            var containerCount = spellContainers.Count;
+            var containerCount = abilityContainers.Count;
             var abilityCount = abilities.Count;
 
-            for (int i = 0; i < containerCount && i < abilityCount; i++)
+            for (var i = 0; i < containerCount && i < abilityCount; i++)
             {
-                if (spellContainers[i] != null)
+                if (abilityContainers[i] != null)
                 {
-                    spellContainers[i].Init(abilities[i]);
+                    abilityContainers[i].Init(abilities[i]);
                 }
                 else
                 {
