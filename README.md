@@ -15,7 +15,7 @@ The repo contains a tiny top‑down prototype (blue "hero" cube vs. red "enemy" 
 | **Consequences**       | Gameplay effects that can chain further consequences. – Implemented: `RectOverlap`, `SphereOverlap`, `DealDamage`. |
 | **Stat**               | ScriptableObject wrapper around `float` for designer‑friendly tuning.                                              |
 | **Game State Manager** | Tracks live enemies, shows **Win Panel**, handles scene reload.                                                    |
-| **Object Pool**        | Re‑uses VFX objects to avoid GC allocations.                                                                       |
+
 
 ---
 
