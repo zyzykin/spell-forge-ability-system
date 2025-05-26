@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 945181ebd27d947cc9367f34bc770aeb, type: 3}
-  m_Name: SlashAndStomp_Phase2_DealDamage
+  m_Script: {fileID: 11500000, guid: 600bb6e4dbf6d4c1e8fb62e649ae2c16, type: 3}
+  m_Name: Damage
   m_EditorClassIdentifier: 
-  OnExecute:
-    m_PersistentCalls:
-      m_Calls: []
-  Damage: {fileID: 11400000, guid: f3b2999b7f3c74779937e2d7f0be0bfa, type: 2}
+  Value: 20

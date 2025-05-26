@@ -7,15 +7,15 @@ namespace SpellForge.Scripts.AbilitySystem.Consequences
     [CreateAssetMenu(fileName = "RectOverlap", menuName = "AbilitySystem/Consequences/RectOverlap")]
     public class RectOverlap : Consequence
     {
-        public float Width = 3f;
-        public float Height = 1f;
-        public float Depth = 3f;
+        public Stat Width;
+        public Stat Height;
+        public Stat Depth;
         public Consequence ChainedConsequence;
 
         public override async UniTask Execute(GameObject user, AbilityContext context)
         {
             var center = context.Center;
-            var halfExtents = new Vector3(Width / 2f, Height / 2f, Depth / 2f);
+            var halfExtents = new Vector3(Width.Value / 2f, Height.Value / 2f, Depth.Value / 2f);
 
             var colliders = Physics.OverlapBox(center, halfExtents, Quaternion.identity, LayerMask.GetMask(EnemyLayer));
             context.Targets = colliders.Select(c => c.gameObject).ToArray();

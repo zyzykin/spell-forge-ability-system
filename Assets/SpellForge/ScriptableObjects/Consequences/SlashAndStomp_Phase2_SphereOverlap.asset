@@ -15,5 +15,5 @@ MonoBehaviour:
   OnExecute:
     m_PersistentCalls:
       m_Calls: []
-  Radius: 5
+  Radius: {fileID: 11400000, guid: 62cb8233ae1be4006abf15348962e8d7, type: 2}
   ChainedConsequence: {fileID: 11400000, guid: 738e0e7231c154d2f91dbdc4c817fcf4, type: 2}

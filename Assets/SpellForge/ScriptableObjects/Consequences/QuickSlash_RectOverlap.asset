@@ -15,7 +15,7 @@ MonoBehaviour:
   OnExecute:
     m_PersistentCalls:
       m_Calls: []
-  Width: 3
-  Height: 1
-  Depth: 3
+  Width: {fileID: 11400000, guid: 70c9f5aa4982b45b18d87289948bbb9c, type: 2}
+  Height: {fileID: 11400000, guid: 3af0343ce2b52430286d679bcf640fd6, type: 2}
+  Depth: {fileID: 11400000, guid: a61e964e9b98e46b0a9220bfe17dd8bd, type: 2}
   ChainedConsequence: {fileID: 11400000, guid: 46ba92ae2b96d4a9f82f502086eba1d1, type: 2}

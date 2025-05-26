@@ -7,14 +7,14 @@ namespace SpellForge.Scripts.AbilitySystem.Consequences
     [CreateAssetMenu(fileName = "SphereOverlap", menuName = "AbilitySystem/Consequences/SphereOverlap")]
     public class SphereOverlap : Consequence
     {
-        public float Radius = 5f;
+        public Stat Radius;
         public Consequence ChainedConsequence;
 
         public override async UniTask Execute(GameObject user, AbilityContext context)
         {
             var center = context.Center;
 
-            var colliders = Physics.OverlapSphere(center, Radius, LayerMask.GetMask(EnemyLayer));
+            var colliders = Physics.OverlapSphere(center, Radius.Value, LayerMask.GetMask(EnemyLayer));
             context.Targets = colliders.Select(c => c.gameObject).ToArray();
 
             if (ChainedConsequence != null)

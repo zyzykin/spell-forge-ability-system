@@ -7,7 +7,7 @@ namespace SpellForge.Scripts.AbilitySystem.Consequences
     [CreateAssetMenu(fileName = "DealDamage", menuName = "AbilitySystem/Consequences/DealDamage")]
     public class DealDamage : Consequence
     {
-        public float Damage = 20f;
+        public Stat Damage;
 
         public override async UniTask Execute(GameObject user, AbilityContext context)
         {
@@ -17,7 +17,7 @@ namespace SpellForge.Scripts.AbilitySystem.Consequences
                 if (health != null)
                 {
                     Debug.Log($"DealDamage {name}: Applying {Damage} damage to {context.CurrentTarget.name}");
-                    health.TakeDamage(Damage);
+                    health.TakeDamage(Damage.Value);
                 }
                 else
                 {

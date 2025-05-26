@@ -15,4 +15,4 @@ MonoBehaviour:
   OnExecute:
     m_PersistentCalls:
       m_Calls: []
-  Damage: 20
+  Damage: {fileID: 11400000, guid: f3b2999b7f3c74779937e2d7f0be0bfa, type: 2}
