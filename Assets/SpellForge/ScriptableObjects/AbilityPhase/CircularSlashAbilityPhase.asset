@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016d2142ac57042d7abe1b321fdcebb6, type: 3}
   m_Name: CircularSlashAbilityPhase
   m_EditorClassIdentifier: 
-  duration: {fileID: 11400000, guid: 67cfe2d86e5c449dc9a162370b5d33ce, type: 2}
-  consequenceEntries:
-  - normalizedTime: 0.6
+  Duration: {fileID: 11400000, guid: 67cfe2d86e5c449dc9a162370b5d33ce, type: 2}
+  ConsequenceEntries:
+  - normalizedTime: {fileID: 11400000, guid: 4abb19a3f37034bafa28cb610d1449e3, type: 2}
     consequences:
     - {fileID: 11400000, guid: 016a8ccd0e7f74f93897f35c65441f75, type: 2}

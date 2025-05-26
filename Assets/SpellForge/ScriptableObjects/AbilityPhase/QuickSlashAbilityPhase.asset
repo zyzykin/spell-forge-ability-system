@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016d2142ac57042d7abe1b321fdcebb6, type: 3}
   m_Name: QuickSlashAbilityPhase
   m_EditorClassIdentifier: 
-  duration: {fileID: 11400000, guid: 670785ba453a84d6c80f5a93d6712051, type: 2}
-  consequenceEntries:
-  - normalizedTime: 0.7
+  Duration: {fileID: 11400000, guid: 670785ba453a84d6c80f5a93d6712051, type: 2}
+  ConsequenceEntries:
+  - normalizedTime: {fileID: 11400000, guid: 68fb521cf67914456ba691c35cf7e58e, type: 2}
     consequences:
     - {fileID: 11400000, guid: 8cb37f65586cb4201976546a2408b293, type: 2}

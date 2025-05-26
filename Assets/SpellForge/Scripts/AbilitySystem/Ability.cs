@@ -11,7 +11,7 @@ namespace SpellForge.Scripts.AbilitySystem
     {
         public string Id;
         public KeyCode Key;
-        public float Cooldown;
+        public Stat Cooldown;
         public List<AbilityPhase> Phases;
         
         private float _lastUsedTime;
@@ -28,7 +28,7 @@ namespace SpellForge.Scripts.AbilitySystem
                     return 1f; // Ability has never been used
                 
                 var elapsed = Time.time - _lastUsedTime;
-                return Mathf.Clamp01(elapsed / Cooldown); // Normalize between 0 and 1
+                return Mathf.Clamp01(elapsed / Cooldown.Value); // Normalize between 0 and 1
             }
         }
 
@@ -40,7 +40,7 @@ namespace SpellForge.Scripts.AbilitySystem
 
         private bool CanExecute()
         {
-            return Time.time >= _lastUsedTime + Cooldown && !_isExecuting;
+            return Time.time >= _lastUsedTime + Cooldown.Value && !_isExecuting;
         }
 
         public async UniTask Execute(GameObject user)

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 016d2142ac57042d7abe1b321fdcebb6, type: 3}
   m_Name: SlashAndStompAbilityPhase1
   m_EditorClassIdentifier: 
-  duration: {fileID: 11400000, guid: 977f1b22a443343c5a5394a8a1182d68, type: 2}
-  consequenceEntries:
-  - normalizedTime: 0.7
+  Duration: {fileID: 11400000, guid: 977f1b22a443343c5a5394a8a1182d68, type: 2}
+  ConsequenceEntries:
+  - normalizedTime: {fileID: 11400000, guid: 5791d70029f344cee992dd8ac9b9a979, type: 2}
     consequences:
     - {fileID: 11400000, guid: c54d611b82348406db93e8110f4a23aa, type: 2}

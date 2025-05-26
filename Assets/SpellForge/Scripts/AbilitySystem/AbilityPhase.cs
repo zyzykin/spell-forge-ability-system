@@ -10,7 +10,7 @@ namespace SpellForge.Scripts.AbilitySystem
     [Serializable]
     public class ConsequenceEntry
     {
-        public float normalizedTime;
+        public Stat normalizedTime;
         public List<Consequence> consequences;
     }
     [CreateAssetMenu(fileName = "NewAbilityPhase", menuName = "AbilitySystem/AbilityPhase")]
@@ -24,7 +24,7 @@ namespace SpellForge.Scripts.AbilitySystem
             ConsequencesByTime = new Dictionary<float, List<Consequence>>();
             foreach (var entry in ConsequenceEntries)
             {
-                ConsequencesByTime[entry.normalizedTime] = entry.consequences;
+                ConsequencesByTime[entry.normalizedTime.Value] = entry.consequences;
             }
         }
         public async UniTask Execute(GameObject user, AbilityContext context)

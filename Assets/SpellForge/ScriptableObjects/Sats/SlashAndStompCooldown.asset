@@ -9,11 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e741c00afdcc54c99a5b7b0b86a76086, type: 3}
-  m_Name: QuickSlash
+  m_Script: {fileID: 11500000, guid: 600bb6e4dbf6d4c1e8fb62e649ae2c16, type: 3}
+  m_Name: SlashAndStompCooldown
   m_EditorClassIdentifier: 
-  Id: QuickSlash
-  Key: 50
-  Cooldown: {fileID: 11400000, guid: 71b0de0885e414335b259dae3174cdf3, type: 2}
-  Phases:
-  - {fileID: 11400000, guid: 066906c335bae47dd88c5f1536253a75, type: 2}
+  Value: 3

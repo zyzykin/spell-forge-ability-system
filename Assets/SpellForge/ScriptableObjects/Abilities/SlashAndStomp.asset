@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: SlashAndStomp
   Key: 51
-  Cooldown: 3
+  Cooldown: {fileID: 11400000, guid: bae6a475426354990bffe9ac5a6cf44b, type: 2}
   Phases:
   - {fileID: 11400000, guid: 8c15599457c634cf988fc2432a754d47, type: 2}
   - {fileID: 11400000, guid: b3bd05fd59df146ab9a75f092ecb8a48, type: 2}
