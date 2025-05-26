@@ -22,6 +22,17 @@ namespace SpellForge.Scripts.AbilitySystem
             public float NormalizedTime = 0.5f; // 0 to 1
             public List<Consequence> Consequences;
         }
+        
+        public float CooldownProgress
+        {
+            get
+            {
+                if (CanExecute()) return 1f; // Ability is ready
+                if (_lastUsedTime <= 0f) return 1f; // Ability has never been used
+                float elapsed = Time.time - _lastUsedTime;
+                return Mathf.Clamp01(elapsed / Cooldown); // Normalize between 0 and 1
+            }
+        }
 
         private float _lastUsedTime;
         private bool _isExecuting;

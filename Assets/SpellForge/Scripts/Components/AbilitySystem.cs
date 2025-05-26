@@ -9,9 +9,11 @@ namespace SpellForge.Scripts.Components
     {
         [SerializeField] private List<Ability> abilities;
 
+        public List<Ability> Abilities => abilities;
+
         public void CheckInput()
         {
-            foreach (var ability in abilities)
+            foreach (var ability in Abilities)
             {
                 if (Input.GetKeyDown(ability.Key))
                 {
