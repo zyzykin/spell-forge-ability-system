@@ -16,7 +16,4 @@ MonoBehaviour:
   Key: 49
   Cooldown: 2
   Phases:
-  - Duration: 1
-    NormalizedTime: 0.6
-    Consequences:
-    - {fileID: 11400000, guid: 016a8ccd0e7f74f93897f35c65441f75, type: 2}
+  - {fileID: 11400000, guid: bb437698e14e64bd684bd2544ae89f40, type: 2}

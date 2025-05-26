@@ -12,18 +12,10 @@ namespace SpellForge.Scripts.AbilitySystem
         public string Id;
         public KeyCode Key;
         public float Cooldown;
-        public List<Phase> Phases;
+        public List<AbilityPhase> Phases;
         
         private float _lastUsedTime;
         private bool _isExecuting;
-
-        [Serializable]
-        public class Phase
-        {
-            public float Duration = 1f;
-            [Range(0f, 1f)] public float NormalizedTime = 0.5f; // 0 to 1
-            public List<Consequence> Consequences;
-        }
 
         public float CooldownProgress
         {
@@ -65,24 +57,19 @@ namespace SpellForge.Scripts.AbilitySystem
 
             foreach (var phase in Phases)
             {
-                var elapsed = 0f;
-                var consequencesTriggered = false;
-
-                while (elapsed < phase.Duration)
+                if (phase == null)
                 {
-                    elapsed += Time.deltaTime;
-                    var normalizedTime = elapsed / phase.Duration;
+                    Debug.LogWarning($"Phase is null in ability {Id}");
+                    continue;
+                }
 
-                    if (!consequencesTriggered && normalizedTime >= phase.NormalizedTime)
-                    {
-                        consequencesTriggered = true;
-                        foreach (var consequence in phase.Consequences)
-                        {
-                            await consequence.Execute(user, context);
-                        }
-                    }
-
-                    await UniTask.Yield();
+                try
+                {
+                    await phase.Execute(user, context); 
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError($"Error executing phase in ability {Id}: {ex.Message}");
                 }
             }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
@@ -17,18 +18,27 @@ namespace SpellForge.Scripts.AbilitySystem.Consequences
             await UniTask.CompletedTask;
         }
     }
-
+    
     public class AbilityContext
     {
         public Vector3 Center;
         public GameObject[] Targets;
         public GameObject CurrentTarget;
-
+        private HashSet<float> triggeredTimes;
         public AbilityContext(Vector3 center)
         {
             Center = center;
             Targets = Array.Empty<GameObject>();
             CurrentTarget = null;
+            triggeredTimes = new HashSet<float>();
+        }
+        public bool HasTriggered(float normalizedTime)
+        {
+            return triggeredTimes.Contains(normalizedTime);
+        }
+        public void MarkTriggered(float normalizedTime)
+        {
+            triggeredTimes.Add(normalizedTime);
         }
     }
 }

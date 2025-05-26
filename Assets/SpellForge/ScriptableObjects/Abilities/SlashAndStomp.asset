@@ -16,11 +16,5 @@ MonoBehaviour:
   Key: 51
   Cooldown: 3
   Phases:
-  - Duration: 0.7
-    NormalizedTime: 0.7
-    Consequences:
-    - {fileID: 11400000, guid: c54d611b82348406db93e8110f4a23aa, type: 2}
-  - Duration: 1
-    NormalizedTime: 0.6
-    Consequences:
-    - {fileID: 11400000, guid: ce6187c7d066f4960aa79511dbd80bb7, type: 2}
+  - {fileID: 11400000, guid: 8c15599457c634cf988fc2432a754d47, type: 2}
+  - {fileID: 11400000, guid: b3bd05fd59df146ab9a75f092ecb8a48, type: 2}
